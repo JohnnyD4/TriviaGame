@@ -1,0 +1,50 @@
+body {
+	padding: 40px;
+	background-color: green;
+}
+
+div {
+	border: 2px solid green;
+	text-align: center;
+}
+
+.wall {
+	width: 80%;
+	max-width: 900px;
+	height: 500px;
+	background-color: orange;
+}
+
+.title {
+	height: 140px;
+	margin-bottom: 10px;
+	font-size: 90px;
+
+}
+
+.timer {
+	height: 50px;
+	font-size: 30px;
+}
+
+.questions {
+	height: 50px;
+	font-size: 22px;
+}
+
+.answers {
+	height: 200px;
+}
+
+#startButton {
+	padding: 10px 50px;
+	font-size: 30px;
+	margin: 10px;
+	background-color: white;
+}
+
+.ansButton {
+	padding: 10px 25px;
+	font-size: 25px;
+	margin: 10px 10px;
+}
