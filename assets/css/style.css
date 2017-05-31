@@ -48,3 +48,7 @@ div {
 	font-size: 25px;
 	margin: 10px 10px;
 }
+
+#answerDiv {
+	/*border: 2px solid black;*/
+}
