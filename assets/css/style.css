@@ -4,7 +4,7 @@ body {
 }
 
 div {
-	border: 2px solid green;
+	border: px solid green;
 	text-align: center;
 }
 
@@ -33,7 +33,7 @@ div {
 }
 
 .answers {
-	height: 200px;
+	min-height: 200px;
 }
 
 #startButton {
@@ -44,9 +44,10 @@ div {
 }
 
 .ansButton {
-	padding: 10px 25px;
-	font-size: 25px;
-	margin: 10px 10px;
+	padding: 8px 20px;
+	font-size: 20px;
+	margin: 2px;
+	width: 300px;
 }
 
 #answerDiv {
