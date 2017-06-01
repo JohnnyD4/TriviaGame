@@ -3,7 +3,7 @@ $(document).ready(function() {
 	$("#ansButton").hide();
 
 	$("#startButton").on("click", function() {
-		$("#startButton").hide();
+		//$("#startButton").hide();
 
 		inID = setInterval(dec, 1000);
 
@@ -120,24 +120,32 @@ $(document).ready(function() {
 
 	]
 
-		var clockRunning = false;
-		var timesUp;
+	var clockRunning = false;
+	var timesUp;
 
-		function dec() {
-			timeNumber--;
-			// $(".timer").html("Time remaining: " + timeNumber);
+	function dec() {
+		timeNumber--;
+		$(".timer").html("Time remaining: " + timeNumber);
 
-			if (timeNumber === 0) {
-				timeUp();
-			}
-
+		if (timeNumber === 0) {
+			// timeUp();
+			reset();
 		}
+	}
 
-		 function timeUp() {
+	function reset() {
+		timeNumber = 6;
+		//clockRunning = true;
+		//dec();
+	}
+
+
+		function timeUp() {
 			$(".questions").html("You ran out of time!");
 			$(".answers").html("You lose a turn");
 			clearInterval(inID);
 			setInterval(question1, 1000 * 2);
+			reset();
 		}
 
 		// function inBetween() {
@@ -150,10 +158,10 @@ $(document).ready(function() {
 		// }
 
 		function question1() {
-			
 
 			for (var i = 0; i < qAndA.length; i++) {
 				
+
 				$(".questions").html(qAndA[counter].quest);
 				 
 				$(".answers").html("<p>" + qAndA[counter].ans1 + "</p>");
@@ -168,8 +176,9 @@ $(document).ready(function() {
 				$(".ansButton").on("click", function() {
 					clearInterval(inID);
 
-					// clockRunning = false;
+					clockRunning = false;
 					// dec();
+					reset();
 
 					var userButton = $(this).text();
 					
@@ -181,12 +190,14 @@ $(document).ready(function() {
 							$(".answers").html("<h1>Correct!</h1>");
 							correctAnswers++;
 							counter++;
+							
 
 						} else {
 							$(".answers").html("<h1>Wrong!</h1>");
 							$(".answers").append("<h2>The correct answer was: " + qAndA[counter].trueAnswer);
 							counter++;
 							wrongAnswers++;
+							
 						}
 					// };
 						console.log("user guess " + userButton);
@@ -194,6 +205,14 @@ $(document).ready(function() {
 					
 
 					setTimeout(question1, 1000 * 2);
+
+					if (counter === 10) {
+						// $(".timer").html("");
+						$(".timer").html("<h1>Game Over</h1>");
+						$(".questions").html("<h2>Your Score: </h2>");
+						$(".answers").html("<h3><strong>Correct</strong>: " + correctAnswers + "</h3>");
+						$(".answers").append("<h3><strong>Incorrect</strong>: " + wrongAnswers + "</h3>");
+					}
 
 				})
 				
