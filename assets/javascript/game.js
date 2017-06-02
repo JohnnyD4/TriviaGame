@@ -4,7 +4,7 @@ $(document).ready(function() {
     
     $("#ansButton").hide();
 
-    var timeNumber = 6;
+    var timeNumber = 10;
 
     var inID;
 
@@ -229,7 +229,7 @@ $(document).ready(function() {
 
     function reset() {
        
-        timeNumber = 5;
+        timeNumber = 10;
        
         $(".timer").html("Time remaining: " + timeNumber);
        
