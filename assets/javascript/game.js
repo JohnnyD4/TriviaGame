@@ -143,7 +143,7 @@ $(document).ready(function() {
         inID = setInterval(dec, 1000);
 
         askQuestions();
-        //setTimeout(question1, 100);
+        
     }) // end of start button function 
 
     //
@@ -229,8 +229,6 @@ $(document).ready(function() {
     function dec() {
         
         timeNumber--;
-        
-        // console.log("Decrementing time: " + timeNumber);
 
         $(".timer").html("Time remaining: " + timeNumber);
 
@@ -262,10 +260,7 @@ $(document).ready(function() {
         $(".questions").html("You ran out of time!");
        
         $(".answers").html("You lose a turn");
-       // clearInterval(inID);
-       // setInterval(question1, 1000 * 2);
-//        dec();
-       // reset();    
+          
     } // end of timeUp functions
 
 
