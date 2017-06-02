@@ -1,7 +1,16 @@
 body {
-	padding: 40px;
-	background-image: url("http://wallpaper-gallery.net/images/cool-dark-wallpapers/cool-dark-wallpapers-16.jpg");
+	padding: 50px;
+	background-image: url(../../assets/images/canes.jpg);
 	background-position: center;
+	
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+nav {
+	color: white;
+	font-size: 50px;
+	text-align: center;
 }
 
 div {
@@ -13,7 +22,9 @@ div {
 	width: 80%;
 	max-width: 900px;
 	height: 500px;
-	background-color: orange;
+	padding: 0px;
+	color: white;
+	/*background-color: orange;*/
 }
 
 .title {
@@ -40,8 +51,9 @@ div {
 #startButton {
 	padding: 10px 50px;
 	font-size: 30px;
-	margin: 10px;
+	margin: 100px;
 	background-color: white;
+	color: black;
 }
 
 .ansButton {
@@ -49,6 +61,7 @@ div {
 	font-size: 20px;
 	margin: 2px;
 	width: 300px;
+	color: black;
 }
 
 #answerDiv {
