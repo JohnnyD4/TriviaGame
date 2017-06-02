@@ -13,6 +13,8 @@ $(document).ready(function() {
     var correctAnswers = 0;
 
     var wrongAnswers = 0;
+
+    var unAnswered = 0;
     
     var qAndA = 
     [   
@@ -119,10 +121,13 @@ $(document).ready(function() {
     var clockRunning = false;
 
     var timesUp;
+
+    var userButton;
     
-
-    // When the start button clicks, button hides and calls question1 function
-
+    // 
+    // When the start button clicks, button 
+    // hides and calls question1 function
+    // 
     $("#startButton").on("click", function() {
 
         $("#startButton").hide();
@@ -159,7 +164,7 @@ $(document).ready(function() {
 		//
         $(".ansButton").on("click", function() {
             
-            var userButton = $(this).text();
+            userButton = $(this).text();
 
             if (userButton == qAndA[counter].trueAnswer) {
                 
@@ -183,14 +188,18 @@ $(document).ready(function() {
     } // end of Question Function
 
 
+    //
+    // function checks if the counter has reached 10 
+    // so there are no more questions left and it shows
+    // the game over page, else it calls askQuestions function
+    //
 	function checkCounter() {
 		
         counter++;
 	    
 	    if (counter == 10) {
-	        // $(".timer").html("");
 	       
-            // console.log("counter " + counter);
+            $(".timer").hide();
 	       
             $(".questions").html("<h1>Game Over</h1>");
 	       
@@ -200,7 +209,10 @@ $(document).ready(function() {
 	       
             $(".answers").append("<h3><strong>Incorrect</strong>: " + wrongAnswers + "</h3>");
 	   		
-            $(".timer").hide();
+            $(".answers").append("<h3><strong>Unanswered</strong>: " + unAnswered + "</h3>");
+
+            $(".answers").append("<button class='restart' id='startButton'>Restart</button>");
+
 	    }
 	    else {
 	    	
@@ -209,24 +221,30 @@ $(document).ready(function() {
             askQuestions();    	
 	    }
 	    reset();
-	}
+	} // end of check counter function
 
+    // 
+    // function decrements a timer for user to see
+    // 
     function dec() {
         
         timeNumber--;
         
-        console.log("Decrementing time: " + timeNumber);
+        // console.log("Decrementing time: " + timeNumber);
 
         $(".timer").html("Time remaining: " + timeNumber);
 
         if (timeNumber == 0) {
         
-        	console.log("TIMES UP SUCKA!!");
+            unAnswered++;
         
         	checkCounter();        
         }
     } // end of dec function
 
+    // 
+    // function resets timer for each page
+    // 
     function reset() {
        
         timeNumber = 10;
@@ -236,6 +254,9 @@ $(document).ready(function() {
         clearInterval(inID);
     } // end of reset function
 
+    // 
+    // function tells you if you ran out of time
+    // 
     function timeUp() {
        
         $(".questions").html("You ran out of time!");

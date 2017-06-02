@@ -49,10 +49,14 @@ div {
 	min-height: 200px;
 }
 
+.start {
+	margin: 100px;
+}
+
 #startButton {
 	padding: 10px 50px;
 	font-size: 30px;
-	margin: 100px;
+	
 	background-color: white;
 	color: black;
 }
@@ -63,6 +67,10 @@ div {
 	margin: 2px;
 	width: 300px;
 	color: black;
+}
+
+.restart{
+	margin: 10px;
 }
 
 #answerDiv {
