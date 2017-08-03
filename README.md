@@ -1,5 +1,5 @@
 # TriviaGame
-------
+
 A 10 question game that checks to see how much of a Miami Hurricane fan you are!
 ------
 
